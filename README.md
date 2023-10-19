@@ -4,4 +4,8 @@ This repository contains the script to parse single-cell RNA-sequencing (scRNA-s
 ## Pipeline
 ### I. Expression count
 To obtain the expression profile of each single cell, filter out noisy single cells (empty droplets, low number of reads, etc) and obtain the read mapping that allows to perform the allele count, run the following scripts in the specified order:
-..1. **submit_cellCOUNT_BY_ref.sh**: In this script file, replace the arguments values strating with *"$"* by the appropriate value described at https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/using/count#cr-count where $BY-reference is the file . 
+1. **submit_cellCOUNT_BY_ref.sh**: In this script file, replace the arguments values strating with *"$"* by the appropriate value described at https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/using/count#cr-count where $BY-reference is the path to the reference transcriptome (e.g. https://github.com/arnaud00013/sc-eQTL/tree/main/BY_reference).
+2. **submit_cellCOUNT_RM_ref.sh**: In this script file, replace the arguments values strating with *"$"* by the appropriate value described at https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/using/count#cr-count where $RM-reference is the path to the reference transcriptome (e.g. https://github.com/arnaud00013/sc-eQTL/tree/main/RM_reference).
+
+### II. Creating single-cell imputed and corrected genotypes
+
