@@ -1,0 +1,17 @@
+{
+    "fasta_hash": "5190421b378742b295eeb96b64e759d52b534d94", 
+    "genomes": [
+        "BY_reference"
+    ], 
+    "gtf_hash": "f455f3057153396adfb3088ad293c5ca7da42e4e", 
+    "input_fasta_files": [
+        "BY4742_fixed.fa"
+    ], 
+    "input_gtf_files": [
+        "genes.gtf"
+    ], 
+    "mem_gb": 16, 
+    "mkref_version": "3.1.0", 
+    "threads": 2, 
+    "version": null
+}

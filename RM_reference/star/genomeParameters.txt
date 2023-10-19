@@ -1,0 +1,14 @@
+### STAR   --runMode genomeGenerate   --runThreadN 1   --genomeDir /hive1/arnaud.nguessan/research/projects/yeast/RM_reference/star   --genomeFastaFiles /hive1/arnaud.nguessan/research/projects/yeast/RM_reference/fasta/genome.fa      --genomeSAindexNbases 10   --genomeChrBinNbits 18   --genomeSAsparseD 1   --limitGenomeGenerateRAM 17179869184   --sjdbGTFfile /hive1/arnaud.nguessan/research/projects/yeast/RM_reference/genes/genes.gtf
+versionGenome	20201
+genomeFastaFiles	/hive1/arnaud.nguessan/research/projects/yeast/RM_reference/fasta/genome.fa 
+genomeSAindexNbases	10
+genomeChrBinNbits	18
+genomeSAsparseD	1
+sjdbOverhang	100
+sjdbFileChrStartEnd	- 
+sjdbGTFfile	/hive1/arnaud.nguessan/research/projects/yeast/RM_reference/genes/genes.gtf
+sjdbGTFchrPrefix	-
+sjdbGTFfeatureExon	exon
+sjdbGTFtagExonParentTranscript	transcript_id
+sjdbGTFtagExonParentGene	gene_id
+sjdbInsertSave	Basic
