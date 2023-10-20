@@ -7,4 +7,4 @@
 #SBATCH --time=03-00:00            # time (DD-HH:MM)
 
 #Run error-correcting HMM
-python generate_dist_cell_to_lineage_uncorrected_gen.py /home/p1211536/scratch/NoFastp_Yeast/test_param_bbqtl_hmm_on_scrna_seq /home/p1211536/scratch/NoFastp_Yeast/test_param_bbqtl_hmm_on_scrna_seq /home/p1211536/scratch/NoFastp_Yeast/test_param_bbqtl_hmm_on_scrna_seq 16 500
+python generate_dist_cell_to_lineage_uncorrected_gen.py $workspace $workspace $cellranger_outs_folder $Nb_cpus
