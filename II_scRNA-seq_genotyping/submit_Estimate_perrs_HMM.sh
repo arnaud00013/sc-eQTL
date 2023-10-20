@@ -32,4 +32,4 @@ mv $THE_CWD_PATH/data/sorted_BY_mapped.bam $THE_CWD_PATH/data/BY_mapped.bam
 samtools index $THE_CWD_PATH/data/RM_mapped.bam
 samtools index $THE_CWD_PATH/data/BY_mapped.bam
 
-python Estimate_perrs_HMM.py data/RM_mapped.bam lst_barcodes_with_expression_data.txt 3 5 16
+python Estimate_perrs_HMM.py *$workspace_path $bam_filename $list_of_barcodes_filename $number_of_minimum_mismatch_within_the_same_read_for_index_swapping $minimum_coverage_per_site $number_of_cpus
