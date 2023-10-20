@@ -10,8 +10,6 @@ import os
 import numpy as np
 import pandas as pd
 
-#RUNNING CMD: /home/p1211536/Tensorflow_mod/bin/python3.9 Estimate_perrs_HMM.py /home/p1211536/scratch/NoFastp_Yeast mapped_and_filtered_RM_reads.bam lst_barcodes_with_expression_data.txt 3 5 16
-
 # load samtools in environment
 os.system("module load samtools/1.12")
 
