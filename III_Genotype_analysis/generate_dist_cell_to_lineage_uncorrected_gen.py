@@ -156,7 +156,7 @@ print(datetime.now())
 #import phenotype data
 df_pheno_30C = pd.read_csv("{0}/pheno_data_30C.txt".format(yeast_project_wp_path),sep="\t",header=0,dtype={ '0': int, '1':np.float32, '2':np.float32 })
 
-#import ALL genotypes
+#Import reference panel genotypes
 df_all_reference_lineage_genotypes = pd.read_csv("{0}/{1}_spore_major.txt".format(yeast_project_wp_path,lst_label_chromosomes[0]),sep="\t",header=None)
 
 for the_label_chr in lst_label_chromosomes[1:len(lst_label_chromosomes)]:
@@ -225,8 +225,7 @@ except:
     pd.DataFrame(mtx_dist_org_genotype_vs_all_reference_lineages).to_csv("{0}/mtx_dist_org_genotype_vs_all_reference_lineages.csv".format(workspace_path), sep='\t',na_rep="NA",header=False,index=False)
 
 #initialize dataframe of best matches in batch1
-nb_lineages_in_batch1 = np.shape(pd.read_csv("{0}/{1}_spore_major_batch_1.txt".format(yeast_project_wp_path,lst_label_chromosomes[0]),sep="\t",header=None).to_numpy())[0]
-print(np.shape(mtx_dist_org_genotype_vs_all_reference_lineages))
+nb_lineages_in_batch1 = 4489
 df_best_match_org_cell_gen_vs_batch1 = pd.DataFrame(data={'best_match' : np.nanargmin(mtx_dist_org_genotype_vs_all_reference_lineages[:,0:nb_lineages_in_batch1],axis=1), 'min_dist': np.nanmin(mtx_dist_org_genotype_vs_all_reference_lineages[:,0:nb_lineages_in_batch1],axis=1), 'pvalue' : np.nan},index=lst_cells)
 
 init_mtx_org_gen_vs_independent_batches_random_subsample_min_score = np.zeros((nb_cells,nb_subsampling))
