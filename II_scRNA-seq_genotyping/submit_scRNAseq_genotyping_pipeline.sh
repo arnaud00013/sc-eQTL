@@ -29,3 +29,4 @@ python Github_HMM.py $THE_CWD_PATH $THE_CWD_PATH $Nb_cells $Nb_cpus
 
 #Count the number of reads per barcode
 samtools view data/RM_mapped.bam | grep CB:Z: | sed 's/.*CB:Z:\([ACGT]*\).*/\1/' | sort | uniq -c > reads_per_barcode
+cp reads_per_barcode data/
