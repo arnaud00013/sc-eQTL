@@ -8,7 +8,6 @@
 
 #paths of the RM and BY workspace
 THE_CWD_PATH=`pwd`
-PATH_TO_PYTHON_SCRIPTS=$PATH_TO_PYTHON_SCRIPTS
 
 #Delete existing cell genotypes file
 /bin/rm -rf data/good_cells_genotypes
@@ -18,7 +17,7 @@ PATH_TO_PYTHON_SCRIPTS=$PATH_TO_PYTHON_SCRIPTS
 /bin/mkdir data/good_cells_genotypes/plots
 
 #Create allele count and allele ratio files for each barcode
-python $PATH_TO_PYTHON_SCRIPTS/pysam_split.py $THE_CWD_PATH 16
+python pysam_split.py $THE_CWD_PATH 16
 
 #Create a file with the list of Cells chromosome genotypes
 /bin/rm -f data/lst_cells_chrom_genotypes.txt
@@ -26,7 +25,7 @@ python $PATH_TO_PYTHON_SCRIPTS/pysam_split.py $THE_CWD_PATH 16
 for f in data/good_cells_genotypes/*.csv; do basename -s .csv $f >> data/lst_cells_chrom_genotypes.txt; done
 
 #Run error-correcting HMM
-python $PATH_TO_PYTHON_SCRIPTS/Github_HMM.py $THE_CWD_PATH $THE_CWD_PATH $Nb_cells $Nb_cpus
+python Github_HMM.py $THE_CWD_PATH $THE_CWD_PATH $Nb_cells $Nb_cpus
 
 #Count the number of reads per barcode
 samtools view data/RM_mapped.bam | grep CB:Z: | sed 's/.*CB:Z:\([ACGT]*\).*/\1/' | sort | uniq -c > reads_per_barcode
