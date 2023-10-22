@@ -20,7 +20,7 @@ nb_expression_pcs_partitions = int(sys.argv[1])
 workspace_path = sys.argv[2]
 cellranger_outs_folder = sys.argv[3]
 nb_cpus = int(sys.argv[4]) #16
-max_ID_subset = int(sys.argv[5])
+max_ID_subset = 18232
 
 df_pos_snps = pd.read_csv("{0}/BYxRM_nanopore_SNPs.gd".format(workspace_path),sep="\t",header=None,dtype={ '0': str, '1': str, '2': int, '3': str })
 df_pos_snps.columns = ["mutation", "chromosome","position","Allele"]
