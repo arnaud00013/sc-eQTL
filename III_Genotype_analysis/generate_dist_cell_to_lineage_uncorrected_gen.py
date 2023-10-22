@@ -33,10 +33,10 @@ print(datetime.now())
 
 #import main workspace absolute path
 workspace_path = sys.argv[1]
-yeast_project_wp_path = sys.argv[2]
-cellranger_outs_folder = sys.argv[3]
-nb_cpus = int(sys.argv[4]) #16
-nb_subsampling = int(sys.argv[5]) #500
+yeast_project_wp_path = sys.argv[1]
+cellranger_outs_folder = sys.argv[2]
+nb_cpus = int(sys.argv[3]) #16
+nb_subsampling = int(sys.argv[4]) #500
 
 df_pos_snps = pd.read_csv("{0}/BYxRM_nanopore_SNPs.gd".format(yeast_project_wp_path),sep="\t",header=None,dtype={ '0': str, '1': str, '2': int, '3': str })
 df_pos_snps.columns = ["mutation", "chromosome","position","Allele"]
