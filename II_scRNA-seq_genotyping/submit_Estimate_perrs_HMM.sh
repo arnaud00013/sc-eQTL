@@ -1,5 +1,5 @@
 #!/bin/bash
-#INSERT header
+#HEADER
 
 #create repertory for data and output
 /bin/rm -rf data
