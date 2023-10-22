@@ -7,4 +7,4 @@
 #SBATCH --time=03-00:00            # time (DD-HH:MM)
 
 #Run error-correcting HMM
-python generate_dist_cell_to_lineage_corrected_gen.py $workspace $workspace $workspace $Nb_cpus $Number_of_subsampes_for_lineage_assignment
+python generate_dist_cell_to_lineage_corrected_gen.py $workspace $Nb_cpus $Number_of_subsampes_for_lineage_assignment
