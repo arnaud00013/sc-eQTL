@@ -19,13 +19,12 @@ print(datetime.now())
 the_ind_partition = int(sys.argv[1])
 nb_expression_pcs_partitions = int(sys.argv[2])
 nb_expression_PCs = int(sys.argv[3])
-workspace_path = "/home/p1211536/scratch/NoFastp_Yeast" #sys.argv[4]
-yeast_project_wp_path = "/home/p1211536/scratch/NoFastp_Yeast" #sys.argv[5]
-cellranger_outs_folder = "/home/p1211536/scratch/NoFastp_Yeast" #sys.argv[6]
-nb_cpus = 16 #int(sys.argv[7]) #16
-cutoff_uncertainty_score = 0.2 #int(sys.argv[8])
-max_ID_subset = int(sys.argv[4])
-
+workspace_path = sys.argv[4]
+yeast_project_wp_path = sys.argv[4]
+cellranger_outs_folder = sys.argv[5]
+nb_cpus = int(sys.argv[6])
+cutoff_uncertainty_score = 0.2
+max_ID_subset = 18232
 df_pos_snps = pd.read_csv("{0}/BYxRM_nanopore_SNPs.gd".format(yeast_project_wp_path),sep="\t",header=None,dtype={ '0': str, '1': str, '2': int, '3': str })
 df_pos_snps.columns = ["mutation", "chromosome","position","Allele"]
 df_pos_snps["the_key"] = ["{0}_{1}".format(df_pos_snps.chromosome.tolist()[c],df_pos_snps.position.tolist()[c]) for c in np.arange(np.shape(df_pos_snps)[0])]
