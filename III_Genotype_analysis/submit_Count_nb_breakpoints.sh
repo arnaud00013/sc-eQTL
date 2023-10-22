@@ -7,4 +7,4 @@
 #SBATCH --time=03-00:00            # time (DD-HH:MM)
 
 #Run error-correcting HMM
-python Count_nb_breakpoints_per_HMM_imputations.py $workspace $workspace $cellranger_outs_folder $Nb_cpus
+python Count_nb_breakpoints_per_HMM_imputations.py $workspace $cellranger_outs_folder $Nb_cpus
