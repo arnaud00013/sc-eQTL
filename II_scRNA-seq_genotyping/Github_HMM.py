@@ -67,7 +67,7 @@ def get_transition_matrices(SNP_list,chrom):
     length = len(SNP_list[chrom])-1
     T = np.full((length,4,4),np.nan)
 
-    error_prob = 0.01
+    error_prob = 0.0338
     return_prob = 0.3
 
     for i in range(length):
