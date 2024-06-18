@@ -169,7 +169,7 @@ with open(args.i,'r') as readfile:
 
 
 # Read in the fitness data
-mtx_gene_expression = pd.read_csv("{0}/max_tot_Reconstructed_E.csv".format(workspace_path),sep="\t",header=None).to_numpy() #pd.read_csv(args.fit,sep="\t",header=None).to_numpy()
+mtx_gene_expression = pd.read_csv(args.fit,sep="\t",header=None).to_numpy() #pd.read_csv("{0}/max_tot_Reconstructed_E.csv".format(workspace_path),sep="\t",header=None).to_numpy() #
 #mtx_gene_expression = (mtx_gene_expression - mtx_gene_expression.mean(axis=0))/np.std(mtx_gene_expression,axis=0)
 
 '''
