@@ -235,7 +235,7 @@ for the_label_chr in lst_label_chromosomes[1:16]:
 mtx_corrected_imputed_genotypes = df_corrected_imputed_genotypes.to_numpy()
 del df_corrected_imputed_genotypes
 #Median genotypes for barcodes with same reference lineage assignment
-median_G = pd.read_csv("{0}/test_combine/median_G.csv".format(workspace_path),sep="\t",header=None).to_numpy()
+#median_G = pd.read_csv("{0}/test_combine/median_G.csv".format(workspace_path),sep="\t",header=None).to_numpy()
 '''
 # Open all the genotype files
 #model_genotypes_file = []
