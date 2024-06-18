@@ -7,7 +7,7 @@
 #SBATCH -t 2-00:00 # Runtime in D-HH:MM (or use minutes)
 #SBATCH --mem=200G
 
-FOLDER="/home/p1211536/scratch/NoFastp_Yeast/batch1_QTL"
-FITNESS_FILE="batch1_pheno_data_30C.txt"
+FOLDER="/home/p1211536/scratch/NoFastp_Yeast/sc_eQTL"
+FITNESS_FILE="max_tot_Reconstructed_E.csv"
 
 ~/Tensorflow_mod/bin/python3.9 step_QTL.py --model 2 --dir $FOLDER --fit $FITNESS_FILE --unweighted 1 --nosave 1 --cpu 16
