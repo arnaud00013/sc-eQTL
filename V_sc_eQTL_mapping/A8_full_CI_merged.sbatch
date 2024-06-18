@@ -7,7 +7,7 @@
 #SBATCH -t 2-00:00 # Runtime in D-HH:MM (or use minutes)
 #SBATCH --mem=200G
 
-FOLDER="/home/p1211536/scratch/NoFastp_Yeast"
-FITNESS_FILE="pheno_data_30C.txt"
+FOLDER="/home/p1211536/scratch/NoFastp_Yeast/sc_eQTL"
+FITNESS_FILE="max_tot_Reconstructed_E.csv"
 
-~/Tensorflow_mod/bin/python3.9 posterior_position_2.py -qtl refined_merged.txt --model 2 --dir $FOLDER --fit $FITNESS_FILE --unweighted 1 >$FOLDER/CI_merged.txt
+~/Tensorflow_mod/bin/python3.9 posterior_position_2.py -qtl refined_merged.txt --model 2 --dir $FOLDER/gene_id_$the_gene_id --fit $FITNESS_FILE --unweighted 1 >$FOLDER/gene_id_$the_gene_id/CI_merged.txt
