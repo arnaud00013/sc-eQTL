@@ -10,4 +10,4 @@
 FOLDER="/home/p1211536/scratch/NoFastp_Yeast/sc_eQTL"
 FITNESS_FILE="max_tot_Reconstructed_E.csv"
 
-~/Tensorflow_mod/bin/python3.9 find_lambda_3.py -dir $FOLDER -model 2 -fit $FITNESS_FILE -lambda_output $FOLDER/lambda.txt >$FOLDER/unrefined.txt
+~/Tensorflow_mod/bin/python3.9 find_lambda_3.py -dir $FOLDER -model 2 -fit $FITNESS_FILE -lambda_output $FOLDER/$the_gene_id/lambda.txt >$FOLDER/$the_gene_id/unrefined.txt
