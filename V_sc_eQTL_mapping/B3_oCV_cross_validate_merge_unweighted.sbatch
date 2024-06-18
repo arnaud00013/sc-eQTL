@@ -21,9 +21,9 @@ oCVs+=('8')
 oCVs+=('9')
 
 
-FOLDER="/home/p1211536/scratch/NoFastp_Yeast/batch1_QTL/oCV_$SLURM_ARRAY_TASK_ID"
-FITNESS_FILE="batch1_pheno_data_30C.txt"
-FOLDER_full="/home/p1211536/scratch/NoFastp_Yeast/batch1_QTL"
+FOLDER="/home/p1211536/scratch/NoFastp_Yeast/sc_eQTL/gene_id_$the_gene_id/oCV_$SLURM_ARRAY_TASK_ID"
+FITNESS_FILE="max_tot_Reconstructed_E.csv"
+FOLDER_full="/home/p1211536/scratch/NoFastp_Yeast/sc_eQTL"
 
 K_param=$(cut -f1 $FOLDER_full/lambda.txt)
 
