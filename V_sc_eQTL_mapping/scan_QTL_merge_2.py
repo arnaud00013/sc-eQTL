@@ -280,13 +280,14 @@ num_lines_genotypes = []
 chr_to_scan = []
 start = time.perf_counter()
 i = 0
+'''
 #create matrix of corrected and imputed genotypes
 df_corrected_imputed_genotypes = pd.read_csv("{0}/data/good_cells_genotypes/HMM_Genotypes_{1}.csv".format(workspace_path,lst_label_chromosomes[0]),sep="\t",header=None)
 for the_label_chr in lst_label_chromosomes[1:16]:
     df_corrected_imputed_genotypes = pd.concat([df_corrected_imputed_genotypes,pd.read_csv("{0}/data/good_cells_genotypes/HMM_Genotypes_{1}.csv".format(workspace_path,the_label_chr),sep="\t",header=None)],axis=1)
 mtx_corrected_imputed_genotypes = df_corrected_imputed_genotypes.to_numpy()
 del df_corrected_imputed_genotypes
-'''
+
 #Median genotypes for barcodes with same reference lineage assignment
 try:
     median_G = pd.read_csv("{0}/test_combine/median_G.csv".format(workspace_path),sep="\t",header=None).to_numpy()
@@ -305,14 +306,15 @@ except:
         else:
             continue
 '''
+max_reads_G = pd.read_csv("{0}/max_reads_G.csv".format(workspace_path),sep="\t",header=None).to_numpy()
 for the_label_chr in lst_label_chromosomes[0:len(lst_label_chromosomes)]:
-    genotypes_file.append(np.transpose(mtx_corrected_imputed_genotypes[:,lst_inds_begin_chrs[i]:(lst_inds_finish_chrs[i]+1)])) #genotypes_file.append(np.transpose(median_G[:,lst_inds_begin_chrs[i]:(lst_inds_finish_chrs[i]+1)]))
+    genotypes_file.append(np.transpose(max_reads_G[:,lst_inds_begin_chrs[i]:(lst_inds_finish_chrs[i]+1)]))  #genotypes_file.append(np.transpose(mtx_corrected_imputed_genotypes[:,lst_inds_begin_chrs[i]:(lst_inds_finish_chrs[i]+1)]))
     #print(np.shape(genotypes_file[i])) #sanity check for genotype matrix shape
     num_lines_genotypes.append(genotypes_file[i].shape[0])
     chr_to_scan.append(i)
     print(str(i) + "    " + str(time.perf_counter() - start) + "    " + str(process.memory_info().rss/1024/1024),file=sys.stderr)
     i = i + 1
-del mtx_corrected_imputed_genotypes
+#del mtx_corrected_imputed_genotypes
 #del median_G
 
 # Now we want to fill a matrix of X. We'll also concatenate the array of phenotypes as the Y.
