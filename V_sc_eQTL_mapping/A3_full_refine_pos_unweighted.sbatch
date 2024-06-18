@@ -10,4 +10,4 @@
 FOLDER="/home/p1211536/scratch/NoFastp_Yeast"
 FITNESS_FILE="pheno_data_30C.txt"
 
-~/Tensorflow_mod/bin/python3.9 refine_pos_all.py -qtl_pos $FOLDER/$the_gene_id/unrefined.txt --model 2 --dir $FOLDER --fit $FITNESS_FILE --unweighted 1 >$FOLDER/$the_gene_id/refined.txt
+~/Tensorflow_mod/bin/python3.9 refine_pos_all.py -qtl_pos $FOLDER/gene_id_$the_gene_id/unrefined.txt --model 2 --dir $FOLDER/gene_id_$the_gene_id --fit $FITNESS_FILE --unweighted 1 >$FOLDER/gene_id_$the_gene_id/refined.txt
