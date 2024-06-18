@@ -10,4 +10,4 @@
 FOLDER="/home/p1211536/scratch/NoFastp_Yeast/sc_eQTL"
 FITNESS_FILE="max_tot_Reconstructed_E.csv"
 
-~/Tensorflow_mod/bin/python3.9 step_QTL.py --model 2 --dir $FOLDER --fit $FITNESS_FILE --unweighted 1 --nosave 1 --cpu 16
+~/Tensorflow_mod/bin/python3.9 step_QTL.py --model 2 --dir $FOLDER/gene_id_$the_gene_id --fit $FITNESS_FILE --unweighted 1 --nosave 1 --cpu 16
