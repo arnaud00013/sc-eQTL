@@ -55,6 +55,7 @@ num_SNPs = [995, 3735, 558, 4035, 1859, 1288, 3931, 1638, 2078, 2974, 3239, 4310
 
 #Save median expression of genes
 matrix_dir = "{0}/filtered_feature_bc_matrix".format(cellranger_outs_folder)
+'''
 mtx_gene_expression = (scipy.io.mmread(os.path.join(matrix_dir, "matrix.mtx.gz"))).transpose().todense()
 mtx_gene_expression = np.squeeze(np.asarray(mtx_gene_expression))
 mtx_gene_expression = mtx_gene_expression/np.median(np.sum(mtx_gene_expression,axis=1))
@@ -64,13 +65,17 @@ selected_genes_in_expr_mat1 = [i for (i,j) in zip(np.arange(np.shape(mtx_gene_ex
 selected_genes_in_expr_mat2 = [i for (i,j) in zip(np.arange(np.shape(mtx_gene_expression)[1]),((np.isfinite(mtx_gene_expression)).sum(axis=0).tolist())) if j==np.shape(mtx_gene_expression)[0] ]
 selected_genes_in_expr_mat = [int(x) for x in np.intersect1d(selected_genes_in_expr_mat1,selected_genes_in_expr_mat2)]
 mtx_gene_expression = mtx_gene_expression[:,selected_genes_in_expr_mat]
+'''
+mtx_gene_expression = pd.read_csv("{0}/max_tot_Reconstructed_E.csv".format(workspace_path),sep="\t",header=None).to_numpy()
 # backup_mtx_gene_expression
     #median gene expression
 lst_median_gene_expression = (np.median(mtx_gene_expression,axis=0)).tolist()
     #mean normalized gene expression
 lst_mean_raw_gene_expression = (np.mean(mtx_gene_expression,axis=0)).tolist()
+'''
 #Normalize gene expression
 mtx_gene_expression = pd.read_csv(workspace_path+"/Normalized_mtx_gene_expression.csv",sep="\t",header=None).to_numpy()
+'''
     #mean normalized gene expression
 lst_mean_norm_gene_expression = (np.mean(mtx_gene_expression,axis=0)).tolist()
 df_per_gene_summary = pd.DataFrame({'Gene_id': np.arange(len(lst_median_gene_expression)).tolist(), 'median_raw_gene_expression': lst_median_gene_expression, 'mean_raw_gene_expression': lst_mean_raw_gene_expression, 'mean_normalized_gene_expression': lst_mean_norm_gene_expression})
