@@ -20,7 +20,7 @@ oCVs+=('7')
 oCVs+=('8')
 oCVs+=('9')
 
-FOLDER="/home/p1211536/scratch/NoFastp_Yeast/batch1_QTL/oCV_$SLURM_ARRAY_TASK_ID"
-FITNESS_FILE="batch1_pheno_data_30C.txt"
+FOLDER="/home/p1211536/scratch/NoFastp_Yeast/sc_eQTL/gene_id_$the_gene_id/oCV_$SLURM_ARRAY_TASK_ID"
+FITNESS_FILE="max_tot_Reconstructed_E.csv"
 
 ~/Tensorflow_mod/bin/python3.9 step_QTL.py --model 1 --dir $FOLDER --fit $FITNESS_FILE --oCV $SLURM_ARRAY_TASK_ID --maxqtl 300 --unweighted 1 --nosave 1 --cpu 16
