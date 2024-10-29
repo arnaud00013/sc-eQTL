@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --account=def-shapiro
+#SBATCH --account=def-anguyen
 #SBATCH -J RUN_A5_sc_eQTL_yeast_genes # Job name
 #SBATCH -n 1 # Number of cores
 #SBATCH -N 1 # Ensure that all cores are on one machine
