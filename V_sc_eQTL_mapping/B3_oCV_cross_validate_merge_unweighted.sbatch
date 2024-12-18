@@ -27,4 +27,4 @@ FOLDER_full="/home/p1211536/scratch/NoFastp_Yeast/sc_eQTL"
 
 K_param=$(cut -f1 $FOLDER_full/lambda.txt)
 
-~/Tensorflow_mod/bin/python3.9 scan_QTL_merge_2.py -i $FOLDER/output.txt -k $K_param --model 1 --oCV $SLURM_ARRAY_TASK_ID -fit $FITNESS_FILE --unweighted 1 >$FOLDER/cross_val_merge.txt
+~/Tensorflow_mod/bin/python3.9 scan_QTL_merge_2.py -i $FOLDER/output.txt -k $K_param --model 1 --oCV $SLURM_ARRAY_TASK_ID --fit $FITNESS_FILE --unweighted 1 >$FOLDER/cross_val_merge.txt
