@@ -310,7 +310,7 @@ for i in range(len(corr_groups)):
 			corr_groups[i] = merge
 				
 			# Delete j
-			corr_groups =  del corr_groups[j] #np.delete(corr_groups,j)
+			np.delete(corr_groups,j) # corr_groups =  del corr_groups[j] # 
 			# Restart
 			j = i
 		j = j + 1
