@@ -310,7 +310,7 @@ for i in range(len(corr_groups)):
 			corr_groups[i] = merge
 				
 			# Delete j
-			np.delete(corr_groups,j) # corr_groups =  del corr_groups[j] # 
+			del corr_groups[j] # corr_groups = np.delete(corr_groups,j) # 
 			# Restart
 			j = i
 		j = j + 1
@@ -340,7 +340,7 @@ for i in range(len(pos_groups)):
 		if(np.in1d(np.arange(min_i,max_i+1),np.arange(min_j,max_j+1)).any() and chr_qtl_min_i == chr_qtl_max_j and chr_qtl_max_i == chr_qtl_min_j):
 			merge = np.unique(np.concatenate((pos_groups[i],pos_groups[j]),0))
 			pos_groups[i] = merge
-			pos_groups = np.delete(pos_groups,j)
+			# del pos_groups[j] # pos_groups = np.delete(pos_groups,j) # 
 			j = i
 		j = j + 1
 
